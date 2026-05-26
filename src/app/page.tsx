@@ -1,9 +1,21 @@
+import { CTA } from "@/components/site/cta"
+import { Features } from "@/components/site/features"
+import { Hero } from "@/components/site/hero"
+import { HowItWorks } from "@/components/site/how-it-works"
+import { Pricing } from "@/components/site/pricing"
+import { Problem } from "@/components/site/problem"
+import { SocialProof } from "@/components/site/social-proof"
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="text-4xl font-bold mb-4">CertDocket</h1>
-      <p className="text-xl text-gray-600">Automated compliance certificate management</p>
-      <p className="mt-8 text-sm text-gray-400">Coming soon</p>
-    </main>
-  );
+    <>
+      <Hero />
+      <Problem />
+      <Features />
+      <HowItWorks />
+      <SocialProof />
+      <Pricing />
+      <CTA />
+    </>
+  )
 }
