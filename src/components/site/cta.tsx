@@ -33,7 +33,7 @@ export function CTA() {
                 size="lg"
                 variant="ghost"
                 className="text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-                render={<Link href="#demo">Talk to sales</Link>}
+                render={<Link href="/pricing">Start free trial</Link>}
               />
             </div>
             <p className="mt-6 text-xs text-primary-foreground/70">
