@@ -113,12 +113,12 @@ const features: FeatureSectionData[] = [
     icon: CreditCard,
     title: "Straightforward per-month pricing, with a 14-day free trial",
     description:
-      "Pick the plan that matches your team. SMB for small operations getting off spreadsheets, Growth for multi-site teams that can't afford a missed renewal. Every plan starts with a 14-day free trial — no credit card required.",
+      "Pick the plan that matches your team. Starter for small operations getting off spreadsheets, Professional for multi-site teams that can't afford a missed renewal. Every plan starts with a 14-day free trial — no credit card required.",
     benefit:
       "Predictable monthly cost. No surcharges for storage, reports, or reminders.",
     bullets: [
-      "SMB plan for teams up to 25 employees",
-      "Growth plan for multi-site teams up to 100",
+      "Starter plan for teams up to 25 employees",
+      "Professional plan for multi-site teams up to 100",
       "14-day free trial on every plan",
       "Cancel or change plans any time",
     ],
@@ -271,7 +271,7 @@ function FeatureSection({
               <Button
                 size="lg"
                 variant="ghost"
-                render={<Link href="#demo">Talk to sales</Link>}
+                render={<Link href="/pricing">Start free trial</Link>}
               />
             </div>
           </div>
@@ -596,14 +596,14 @@ function AuditReportsMock() {
 function BillingPlansMock() {
   const plans = [
     {
-      name: "SMB",
+      name: "Starter",
       price: 39,
       blurb: "Small teams getting off spreadsheets.",
       features: ["Up to 25 employees", "Renewal reminders", "PDF audit reports"],
       featured: false,
     },
     {
-      name: "Growth",
+      name: "Professional",
       price: 59,
       blurb: "Multi-site teams that can't miss a renewal.",
       features: ["Up to 100 employees", "SSO & RBAC", "HRIS integrations"],
