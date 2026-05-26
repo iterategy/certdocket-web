@@ -7,24 +7,13 @@ const footerSections: { title: string; links: { href: string; label: string }[] 
     links: [
       { href: "#features", label: "Features" },
       { href: "#pricing", label: "Pricing" },
-      { href: "#integrations", label: "Integrations" },
-      { href: "#changelog", label: "Changelog" },
     ],
   },
   {
     title: "Company",
     links: [
-      { href: "#about", label: "About" },
       { href: "#customers", label: "Customers" },
-      { href: "#contact", label: "Contact" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { href: "#privacy", label: "Privacy" },
-      { href: "#terms", label: "Terms" },
-      { href: "#security", label: "Security" },
+      { href: "mailto:support@certdocket.com", label: "Contact" },
     ],
   },
 ]
@@ -33,7 +22,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-border/60 bg-muted/30">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-[1.5fr_repeat(3,1fr)]">
+        <div className="grid gap-10 md:grid-cols-[1.5fr_repeat(2,1fr)]">
           <div>
             <Link
               href="/"

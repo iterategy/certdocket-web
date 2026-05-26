@@ -21,7 +21,7 @@ export function Hero() {
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <Badge variant="outline" className="mb-6 gap-1.5">
             <span className="size-1.5 rounded-full bg-emerald-500" />
-            Built for OSHA & safety-critical teams
+            Early access for HR and safety teams
           </Badge>
           <h1 className="font-heading text-4xl font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl">
             Never get fined for an{" "}

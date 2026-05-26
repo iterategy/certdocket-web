@@ -113,12 +113,12 @@ const features: FeatureSectionData[] = [
     icon: CreditCard,
     title: "Straightforward per-month pricing, with a 14-day free trial",
     description:
-      "Pick the plan that matches your team. Starter for small operations getting off spreadsheets, Professional for multi-site teams that can't afford a missed renewal. Every plan starts with a 14-day free trial — no credit card required.",
+      "Pick the plan that matches your team. Starter for small operations getting off spreadsheets, Pro for multi-site teams that can't afford a missed renewal. Every plan starts with a 14-day free trial — no credit card required.",
     benefit:
       "Predictable monthly cost. No surcharges for storage, reports, or reminders.",
     bullets: [
       "Starter plan for teams up to 25 employees",
-      "Professional plan for multi-site teams up to 100",
+      "Pro plan for multi-site teams up to 100",
       "14-day free trial on every plan",
       "Cancel or change plans any time",
     ],
@@ -303,28 +303,28 @@ function FigureFrame({ children }: { children: React.ReactNode }) {
 function CertificationTrackingMock() {
   const rows = [
     {
-      name: "Aiden Park",
+      name: "Employee A",
       role: "Forklift Operator",
       cert: "OSHA 10",
       due: "Dec 12",
       status: "ok" as const,
     },
     {
-      name: "Priya Shah",
+      name: "Jane Smith",
       role: "Site Manager",
       cert: "First Aid / CPR",
       due: "Nov 28",
       status: "warn" as const,
     },
     {
-      name: "Marcus Reed",
+      name: "John Doe",
       role: "Lineman",
       cert: "Powered Industrial Truck",
       due: "Oct 04",
       status: "bad" as const,
     },
     {
-      name: "Lina Chen",
+      name: "Employee B",
       role: "Welder",
       cert: "AWS D1.1",
       due: "Feb 17",
@@ -495,7 +495,7 @@ function AutomatedRemindersMock() {
             Your forklift certification expires in 7 days
           </div>
           <p className="text-xs leading-relaxed text-muted-foreground">
-            Hi Aiden — your OSHA Powered Industrial Truck certification expires on
+            Hi there — your OSHA Powered Industrial Truck certification expires on
             November 5. Tap below to upload your renewal so you don&apos;t lose
             your authorization to operate.
           </p>
@@ -504,7 +504,7 @@ function AutomatedRemindersMock() {
             <ArrowRight className="size-3" aria-hidden />
           </div>
           <div className="text-[11px] text-muted-foreground">
-            Manager copy: Priya Shah · Site: Atlas Logistics — Dock 4
+            Manager copy: Jane Smith · Site: Acme Corp — Dock 4
           </div>
         </div>
       </div>
@@ -533,10 +533,10 @@ function AutomatedRemindersMock() {
 
 function AuditReportsMock() {
   const lines = [
-    { label: "Atlas Logistics", value: "98% compliant" },
-    { label: "Northwind Builders", value: "94% compliant" },
-    { label: "Harborline Group", value: "91% compliant" },
-    { label: "Meridian Industrial", value: "87% compliant" },
+    { label: "Warehouse Team", value: "98% compliant" },
+    { label: "Field Crew", value: "94% compliant" },
+    { label: "Office Staff", value: "91% compliant" },
+    { label: "Maintenance Team", value: "87% compliant" },
   ];
   return (
     <div className="space-y-3">
@@ -553,7 +553,7 @@ function AuditReportsMock() {
               Quarterly compliance summary
             </div>
             <div className="mt-1 font-heading text-base font-semibold text-foreground">
-              Atlas Logistics — Q1 2026
+              Sample Company — Q1 2026
             </div>
           </div>
           <div className="h-px bg-border/60" />
@@ -603,7 +603,7 @@ function BillingPlansMock() {
       featured: false,
     },
     {
-      name: "Professional",
+      name: "Pro",
       price: 59,
       blurb: "Multi-site teams that can't miss a renewal.",
       features: ["Up to 100 employees", "SSO & RBAC", "HRIS integrations"],
@@ -620,11 +620,6 @@ function BillingPlansMock() {
             plan.featured ? "border-primary ring-1 ring-primary" : "border-border/60",
           )}
         >
-          {plan.featured ? (
-            <span className="absolute -top-2 right-3 rounded-full bg-primary px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary-foreground">
-              Most popular
-            </span>
-          ) : null}
           <div className="text-sm font-semibold text-foreground">{plan.name}</div>
           <div className="mt-1 text-[11px] text-muted-foreground">{plan.blurb}</div>
           <div className="mt-3 flex items-baseline gap-1">
@@ -665,7 +660,7 @@ function WeeklyDigestMock() {
     {
       label: "Expired this week",
       tone: "bad" as const,
-      items: ["1 forklift certification (Marcus R.)"],
+      items: ["1 forklift certification (John D.)"],
     },
     {
       label: "Expiring next 30 days",
@@ -696,7 +691,7 @@ function WeeklyDigestMock() {
         </div>
         <div className="space-y-4 px-4 py-4">
           <div className="text-sm font-semibold text-foreground">
-            Atlas Logistics — week of March 25
+            Sample Company — week of March 25
           </div>
           <p className="text-xs text-muted-foreground">
             Here&apos;s where compliance stands across your team this week. One

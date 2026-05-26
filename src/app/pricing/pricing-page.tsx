@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 type BillingInterval = "monthly" | "annual";
 
 type Tier = {
-  id: "starter" | "professional";
+  id: "starter" | "pro";
   name: string;
   description: string;
   monthlyPrice: number;
@@ -40,13 +40,13 @@ const tiers: Tier[] = [
     ],
   },
   {
-    id: "professional",
-    name: "Professional",
+    id: "pro",
+    name: "Pro",
     description: "For growing teams that need automation, integrations, and SSO.",
     monthlyPrice: 59,
     annualPricePerMonth: Math.round(59 * (1 - ANNUAL_DISCOUNT)),
-    ctaLabel: "Start with Professional",
-    ctaHref: "/signup?plan=professional",
+    ctaLabel: "Start with Pro",
+    ctaHref: "/signup?plan=pro",
     highlight: true,
     highlights: [
       "Unlimited certificates",
@@ -61,7 +61,7 @@ const tiers: Tier[] = [
 type FeatureRow = {
   label: string;
   starter: string | boolean;
-  professional: string | boolean;
+  pro: string | boolean;
 };
 
 type FeatureGroup = {
@@ -73,37 +73,37 @@ const featureGroups: FeatureGroup[] = [
   {
     name: "Core",
     rows: [
-      { label: "Certificate records", starter: "Up to 100", professional: "Unlimited" },
-      { label: "Document storage", starter: "5 GB", professional: "100 GB" },
-      { label: "Workspaces", starter: "1", professional: "Unlimited" },
-      { label: "Team members", starter: "Up to 5", professional: "Unlimited" },
+      { label: "Certificate records", starter: "Up to 100", pro: "Unlimited" },
+      { label: "Document storage", starter: "5 GB", pro: "100 GB" },
+      { label: "Workspaces", starter: "1", pro: "Unlimited" },
+      { label: "Team members", starter: "Up to 5", pro: "Unlimited" },
     ],
   },
   {
     name: "Automation",
     rows: [
-      { label: "Email renewal reminders", starter: true, professional: true },
-      { label: "Custom reminder cadences", starter: false, professional: true },
-      { label: "Automated renewal workflows", starter: false, professional: true },
-      { label: "Bulk import & export", starter: true, professional: true },
+      { label: "Email renewal reminders", starter: true, pro: true },
+      { label: "Custom reminder cadences", starter: false, pro: true },
+      { label: "Automated renewal workflows", starter: false, pro: true },
+      { label: "Bulk import & export", starter: true, pro: true },
     ],
   },
   {
     name: "Integrations",
     rows: [
-      { label: "Slack notifications", starter: false, professional: true },
-      { label: "Webhooks", starter: false, professional: true },
-      { label: "API access", starter: false, professional: true },
-      { label: "SSO (SAML / OIDC)", starter: false, professional: true },
+      { label: "Slack notifications", starter: false, pro: true },
+      { label: "Webhooks", starter: false, pro: true },
+      { label: "API access", starter: false, pro: true },
+      { label: "SSO (SAML / OIDC)", starter: false, pro: true },
     ],
   },
   {
     name: "Support & compliance",
     rows: [
-      { label: "Audit log", starter: false, professional: true },
-      { label: "Role-based access control", starter: false, professional: true },
-      { label: "Standard email support", starter: true, professional: true },
-      { label: "Priority support", starter: false, professional: true },
+      { label: "Audit log", starter: false, pro: true },
+      { label: "Role-based access control", starter: false, pro: true },
+      { label: "Standard email support", starter: true, pro: true },
+      { label: "Priority support", starter: false, pro: true },
     ],
   },
 ];
@@ -239,12 +239,6 @@ function PricingCard({ tier, interval }: { tier: Tier; interval: BillingInterval
         tier.highlight ? "border-primary ring-1 ring-primary" : "border-border",
       )}
     >
-      {tier.highlight ? (
-        <span className="absolute -top-3 right-6 rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary-foreground">
-          Most popular
-        </span>
-      ) : null}
-
       <h3 className="text-xl font-semibold">{tier.name}</h3>
       <p className="mt-2 text-sm text-muted-foreground">{tier.description}</p>
 
@@ -361,7 +355,7 @@ function FeatureGroupRows({ group }: { group: FeatureGroup }) {
               key={tier.id}
               className="border-b border-border py-3 px-4 text-muted-foreground"
             >
-              <FeatureCell value={tier.id === "starter" ? row.starter : row.professional} />
+              <FeatureCell value={tier.id === "starter" ? row.starter : row.pro} />
             </td>
           ))}
         </tr>

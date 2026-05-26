@@ -1,13 +1,12 @@
 import Link from "next/link"
 import { Check } from "lucide-react"
 
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
 const plans = [
   {
-    name: "SMB",
+    name: "Starter",
     price: 39,
     description: "For small teams getting compliance off spreadsheets.",
     features: [
@@ -22,12 +21,12 @@ const plans = [
     featured: false,
   },
   {
-    name: "Growth",
+    name: "Pro",
     price: 59,
     description: "For multi-site teams that can't miss a renewal.",
     features: [
       "Up to 100 employees",
-      "Everything in SMB",
+      "Everything in Starter",
       "Role-based access & SSO",
       "HRIS integrations",
       "Priority support",
@@ -62,11 +61,6 @@ export function Pricing() {
                   : "gap-4 py-8"
               }
             >
-              {plan.featured && (
-                <Badge className="absolute -top-3 right-6">
-                  Most popular
-                </Badge>
-              )}
               <CardContent className="flex flex-col gap-6">
                 <div>
                   <h3 className="font-heading text-lg font-semibold tracking-tight">
